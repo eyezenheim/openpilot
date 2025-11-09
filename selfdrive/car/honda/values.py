@@ -422,11 +422,28 @@ FW_VERSIONS = {
       b'36802-TWA-A330\x00\x00',
       b'36802-TWB-H060\x00\x00',
     ],
+    (Ecu.fwdRadar, 0x18dab0f1, None): [
+      b'8S302-30A-A040\x00\x00',
+    ],
+    (Ecu.fwdCamera, 0x18dab5f1, None): [
+      b'8S102-30A-A050\x00\x00',
+      b'8S102-30A-A060\x00\x00',
+      b'8S102-30A-A070\x00\x00',
+    ],
+    (Ecu.gateway, 0x18daeff1, None): [
+      b'5J802-30B-AB20\x00\x00',
+    ],
     (Ecu.eps, 0x18da30f1, None): [
-      b'39990-TVA-A160\x00\x00',
-      b'39990-TVA-A150\x00\x00',
-      b'39990-TVA-A340\x00\x00',
-      b'39990-TWB-H120\x00\x00',
+      b'39991-30B-D010\x00\x00',
+    ],
+    (Ecu.srs, 0x18da53f1, None): [
+      b'77959-30B-A750\x00\x00',
+    ],
+    (Ecu.hud, 0x18da61f1, None): [
+      b'78209-30A-A010\x00\x00',
+    ],
+    (Ecu.vsa, 0x18da28f1, None): [
+      b'57114-30B-A030\x00\x00',
     ],
   },
   CAR.ACCORD_NIDEC_4CYL: {

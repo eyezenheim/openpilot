@@ -117,17 +117,22 @@ class CarInterface(CarInterfaceBase):
       ret.lateralTuning.pid.kpV, ret.lateralTuning.pid.kiV = [[0.8], [0.24]]
 
     elif candidate in (CAR.ACCORD, CAR.ACCORDH):
-      ret.mass = 3279. * CV.LB_TO_KG
-      ret.wheelbase = 2.83
-      ret.centerToFront = ret.wheelbase * 0.39
-      ret.steerRatio = 22.33  # 11.82 is spec end-to-end
-      ret.lateralParams.torqueBP, ret.lateralParams.torqueV = [[0, 4096], [0, 4096]]  # TODO: determine if there is a dead zone at the top end
-      ret.tireStiffnessFactor = 0.8467
+      #ret.mass = 3279. * CV.LB_TO_KG
+      #ret.wheelbase = 2.83
+      #ret.centerToFront = ret.wheelbase * 0.39
+      #ret.steerRatio = 22.33  # 11.82 is spec end-to-end
+      #ret.lateralParams.torqueBP, ret.lateralParams.torqueV = [[0, 4096], [0, 4096]]  # TODO: determine if there is a dead zone at the top end
+      #ret.tireStiffnessFactor = 0.8467
 
-      if eps_modified:
-        ret.lateralTuning.pid.kpV, ret.lateralTuning.pid.kiV = [[0.3], [0.09]]
-      else:
-        ret.lateralTuning.pid.kpV, ret.lateralTuning.pid.kiV = [[0.6], [0.18]]
+      ret.steerActuatorDelay = 0.22
+      ret.lateralParams.torqueBP, ret.lateralParams.torqueV = [[0, 4096], [0, 4096]]
+      ret.lateralTuning.pid.kpV, ret.lateralTuning.pid.kiV = [[0.2], [0.18]]
+      #CarControllerParams.BOSCH_GAS_LOOKUP_V = [0, 1060]
+
+      #if eps_modified:
+        #ret.lateralTuning.pid.kpV, ret.lateralTuning.pid.kiV = [[0.3], [0.09]]
+      #else:
+        #ret.lateralTuning.pid.kpV, ret.lateralTuning.pid.kiV = [[0.6], [0.18]]
 
     elif candidate == CAR.ACURA_ILX:
       ret.mass = 3095. * CV.LB_TO_KG
